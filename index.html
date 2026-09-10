@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>imagebox</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>imagebox</h1>
+    <div id="authArea"></div>
+  </header>
+
+  <section id="authPanel" class="panel" hidden>
+    <div class="authTabs">
+      <button id="showLogin" class="tabBtn active">Log in</button>
+      <button id="showSignup" class="tabBtn">Sign up</button>
+    </div>
+
+    <form id="loginForm" class="authForm">
+      <input type="text" name="username" placeholder="username" required minlength="3" autocomplete="username">
+      <input type="password" name="password" placeholder="password" required minlength="4" autocomplete="current-password">
+      <button type="submit">Log in</button>
+    </form>
+
+    <form id="signupForm" class="authForm" hidden>
+      <input type="text" name="username" placeholder="username" required minlength="3" autocomplete="username">
+      <input type="password" name="password" placeholder="password" required minlength="4" autocomplete="new-password">
+      <button type="submit">Create account</button>
+    </form>
+
+    <p id="authError" class="error"></p>
+  </section>
+
+  <section id="uploadPanel" class="panel" hidden>
+    <form id="uploadForm">
+      <input type="file" name="image" accept="image/*" required>
+      <button type="submit">Drop it in</button>
+    </form>
+    <p id="uploadError" class="error"></p>
+  </section>
+
+  <section id="gallery" class="gallery"></section>
+
+  <template id="cardTemplate">
+    <figure class="card">
+      <img loading="lazy">
+      <figcaption>
+        <span class="uploader"></span>
+        <button class="deleteBtn" hidden>delete</button>
+      </figcaption>
+    </figure>
+  </template>
+
+  <script src="/app.js"></script>
+</body>
+</html>
